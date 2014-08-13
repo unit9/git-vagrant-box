@@ -1,28 +1,3 @@
-#!/usr/bin/env shell
+#!/usr/bin/env bash
 
-###
-# THIS SCRIPT IS MEANT TO BE RUN ON THE VIRTUAL MACHINE
-###
-
-echo Bootstraping Vagrant Box
-
-# Set up network
-echo -e "NETWORKING=yes" > /etc/sysconfig/network
-echo -e "DEVICE=eth0\nBOOTPROTO=dhcp\nONBOOT=yes" > /etc/sysconfig/network-scripts/ifcfg-eth0
-service network restart
-
-# Install Guest Additions
-yum groupinstall "Development Tools"
-yum install kernel-devel # this is already installed but just to make sure
-yum update kernel*
-# reboot
-rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-yum install gcc kernel-devel kernel-headers dkms make bzip2 perl
-KERN_DIR=/usr/src/kernels/`uname -r`
-export KERN_DIR
-mount -r -t iso9660 /dev/sr0 /mnt
-cd /mnt
-./VBoxLinuxAdditions.run --nox11
-# reboot
-
-cd /tmp
+echo Bootstraping

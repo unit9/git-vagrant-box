@@ -1,4 +1,4 @@
-#!/usr/bin/env shell
+#!/bin/bash
 
 ###
 # THIS SCRIPT IS MEANT TO BE RUN ON A DEV MACHINE (*NOT* ON THE VIRTUAL MACHINE)
