@@ -8,7 +8,7 @@ echo Bootstraping Vagrant Box
 
 # Update kernel
 yum install -y kernel-devel
-yum update kernel*
+yum update -y kernel*
 # reboot
 
 # Install Guest Additions
