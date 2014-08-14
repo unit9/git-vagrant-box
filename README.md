@@ -18,7 +18,7 @@ INSTRUCTIONS
 10. Manually type / execute the setup_network script.
 11. run:
 cd /tmp
-curl -L https://raw.githubusercontent.com/unit9/git-vagrant-box/develop/centos-6.5/bootstrap > bootstrap
+curl -L https://cdn.rawgit.com/unit9/git-vagrant-box/master/centos-6.5/bootstrap > bootstrap
 chmod +x bootstrap
 ./bootstrap
 12. Power off the machine.

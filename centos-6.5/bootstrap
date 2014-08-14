@@ -7,7 +7,7 @@
 echo Bootstraping Vagrant Box
 
 # Update kernel
-yum install kernel-devel
+yum install -y kernel-devel
 yum update kernel*
 # reboot
 
@@ -15,7 +15,7 @@ yum update kernel*
 mkdir /media/VirtualBoxGuestAdditions
 mount -r /dev/cdrom /media/VirtualBoxGuestAdditions
 rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-yum install gcc kernel-devel kernel-headers dkms make bzip2 perl
+yum install -y gcc kernel-devel kernel-headers dkms make bzip2 perl
 KERN_DIR=/usr/src/kernels/`uname -r`
 export KERN_DIR
 cd /media/VirtualBoxGuestAdditions
@@ -29,7 +29,7 @@ cd /media/VirtualBoxGuestAdditions
 echo 'vagrant ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 # Install wget
-yum install wget
+yum install -y wget
 
 # Configure insecure SSH key
 cd /tpm
@@ -42,13 +42,13 @@ chmod 0600 ~/.ssh/authorized_keys
 
 # PHP 5.5
 rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
-yum install php55w php55w-opcache
+yum install -y php55w php55w-opcache
 
 # Ruby
-yum install ruby rubygems
+yum install -y ruby rubygems
 
 # Node.js
-yum install nodejs npm --enablerepo=epel
+yum install -y nodejs npm --enablerepo=epel
 
 # Gulp.js
 npm install -g gulp
