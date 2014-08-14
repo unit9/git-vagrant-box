@@ -1,0 +1,6 @@
+#!/usr/bin/env shell
+
+# Set up network
+echo -e "NETWORKING=yes" > /etc/sysconfig/network
+echo -e "DEVICE=eth0\nBOOTPROTO=dhcp\nONBOOT=yes" > /etc/sysconfig/network-scripts/ifcfg-eth0
+service network restart

@@ -1,15 +1,10 @@
-#!/usr/bin/env shell
+#!/bin/bash
 
 ###
 # THIS SCRIPT IS MEANT TO BE RUN ON THE VIRTUAL MACHINE AS A SUPERUSER
 ###
 
 echo Bootstraping Vagrant Box
-
-# Set up network
-echo -e "NETWORKING=yes" > /etc/sysconfig/network
-echo -e "DEVICE=eth0\nBOOTPROTO=dhcp\nONBOOT=yes" > /etc/sysconfig/network-scripts/ifcfg-eth0
-service network restart
 
 # Update kernel
 yum install kernel-devel
